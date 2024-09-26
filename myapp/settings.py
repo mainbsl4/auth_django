@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'users',
-    'products'
+    'products',
+    'customers'
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'myapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -161,3 +162,16 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
+
+
+
+
+
+
+
+
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+LOGIN_URL = 'signin_api'
+LOGIN_REDIRECT_URL = 'user_products_view'
+LOGOUT_REDIRECT_URL = 'signin_api'
